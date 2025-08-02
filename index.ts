@@ -76,3 +76,9 @@ await client.rest.put(Routes.applicationCommands(client.application.id), {"body"
 dataContent.lastRun = (new Date()).toISOString();
 await saveData()
 console.log("Running!")
+
+Bun.serve({
+  routes: {
+    "/": new Response("OK"),
+  }
+});
